@@ -1,12 +1,13 @@
 <script>
-	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import { page } from "$app/stores";
+	// import logo from './svelte-logo.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="/">
+			<!-- <img src={logo} alt="SvelteKit" /> -->
+			<img src="./logo.png" alt="SvelteKit" />
 		</a>
 	</div>
 
@@ -15,11 +16,13 @@
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
 		<ul>
-			<li class:active={$page.url.pathname === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.url.pathname === '/about'}>
+			<li class:active={$page.url.pathname === "/"}>
+				<a sveltekit:prefetch href="/">Home</a>
+			</li>
+			<li class:active={$page.url.pathname === "/about"}>
 				<a sveltekit:prefetch href="/about">About</a>
 			</li>
-			<li class:active={$page.url.pathname === '/todos'}>
+			<li class:active={$page.url.pathname === "/todos"}>
 				<a sveltekit:prefetch href="/todos">Todos</a>
 			</li>
 		</ul>
@@ -54,7 +57,7 @@
 
 	.corner img {
 		width: 2em;
-		height: 2em;
+		height: auto;
 		object-fit: contain;
 	}
 
@@ -94,7 +97,7 @@
 
 	li.active::before {
 		--size: 6px;
-		content: '';
+		content: "";
 		width: 0;
 		height: 0;
 		position: absolute;
@@ -104,12 +107,17 @@
 		border-top: var(--size) solid var(--accent-color);
 	}
 
+	li.active a {
+		color: var(--heading-color);
+	}
+
 	nav a {
 		display: flex;
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--heading-color);
+		background-color: var(--grey1);
+		color: var(--accent-color);
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;
@@ -119,6 +127,6 @@
 	}
 
 	a:hover {
-		color: var(--accent-color);
+		color: var(--heading-color);
 	}
 </style>
