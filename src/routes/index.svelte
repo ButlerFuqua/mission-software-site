@@ -3,7 +3,9 @@
 </script>
 
 <script>
-	import Particles from "$lib/particles.svelte";
+	import Particles from "$lib/Particles.svelte";
+	import ApplyForm from "$lib/ApplyForm.svelte";
+	import PledgeForm from "$lib/PledgeForm.svelte";
 </script>
 
 <svelte:head>
@@ -17,10 +19,8 @@
 </section>
 
 <section>
-	<p>Apply to be a client</p>
-	<button>Show form</button>
-	<p>Pledge to provide financial support</p>
-	<button>Show form</button>
+	<ApplyForm />
+	<PledgeForm />
 </section>
 <Particles />
 
