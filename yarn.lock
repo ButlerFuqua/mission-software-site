@@ -355,6 +355,13 @@ svelte-hmr@^0.14.11:
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.14.11.tgz#63d532dc9c2c849ab708592f034765fa2502e568"
   integrity sha512-R9CVfX6DXxW1Kn45Jtmx+yUe+sPhrbYSUp7TkzbW0jI5fVPn6lsNG9NEs5dFg5qRhFNAoVdRw5qQDLALNKhwbQ==
 
+svelte-particles@^1.42.4:
+  version "1.42.4"
+  resolved "https://registry.yarnpkg.com/svelte-particles/-/svelte-particles-1.42.4.tgz#4157fd997a5701ee0d89f6ab2fe58bb48323e822"
+  integrity sha512-wOA4zdPq8We/lSjSI75RyIF3AzxaoDjKqKOgPZlybiMj1clwOW+HLHJy4NXL/BRZB1B0P0auTb2TiMWOgvc4vA==
+  dependencies:
+    tsparticles "^1.42.4"
+
 svelte@^3.46.0:
   version "3.46.4"
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.46.4.tgz#0c46bc4a3e20a2617a1b7dc43a722f9d6c084a38"
@@ -367,6 +374,11 @@ tiny-glob@^0.2.9:
   dependencies:
     globalyzer "0.1.0"
     globrex "^0.1.2"
+
+tsparticles@^1.42.4:
+  version "1.42.4"
+  resolved "https://registry.yarnpkg.com/tsparticles/-/tsparticles-1.42.4.tgz#63f0615c44d88c6e7d5e10e7ea1fb7eba1164b76"
+  integrity sha512-tfjh6hZFID+5mIdqIvAvmpGymG5kFIxB2k1fs0SIDemo7iL9qnQyvI3HankxfRtCblcwRoEYj/g5phdIhqY8vA==
 
 vite@^2.8.0:
   version "2.8.6"

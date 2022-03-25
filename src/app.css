@@ -91,6 +91,10 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
+#tsparticles canvas {
+	pointer-events: none !important;
+}
+
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
