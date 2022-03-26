@@ -37,10 +37,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		position: fixed;
 		height: 60;
-		bottom: 0;
-		z-index: 1;
 	}
 
 	footer a {
