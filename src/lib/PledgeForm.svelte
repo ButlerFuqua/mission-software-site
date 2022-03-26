@@ -19,13 +19,10 @@
         </div>
         <form on:submit={submitForm}>
             <div class="fullInput">
-                <label for="firstName">First Name</label>
-                <input type="text" name="firstName" id="firstName" />
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
             </div>
-            <div class="fullInput">
-                <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="lastName" />
-            </div>
+            
             <div class="fullInput">
                 <label for="donationAmount">Donation amount $ (USD)</label>
                 <input
@@ -45,6 +42,14 @@
                     <input type="checkbox" name="monthly" id="monthly" />
                 </div>
             </div>
+
+<p>
+
+<small>
+You will be emailed when we start accepting donations.
+</small>
+
+</p>
 
             <button id="submitBtn">Submit</button>
         </form>
