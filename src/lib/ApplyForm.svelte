@@ -26,6 +26,10 @@
                 <label for="lastName">Last Name</label>
                 <input type="text" name="lastName" id="lastName" />
             </div>
+<div class="fullInput">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" />
+            </div>
             <div class="fullInput">
                 <label for="orgName">Name of Organization</label>
                 <input type="text" name="orgName" id="orgName" />
