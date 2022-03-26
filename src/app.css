@@ -173,6 +173,9 @@ form button {
 .checkboxContainer input{
 	flex: 1;
 }
+.red-text {
+color: var(--neat-red);
+}
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
