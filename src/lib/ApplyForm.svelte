@@ -1,6 +1,11 @@
 <script>
     import { fade, fly } from "svelte/transition";
     let visible = false;
+
+    const submitForm = (event) => {
+        event.preventDefault();
+        console.log("submit form");
+    };
 </script>
 
 <button id="applyBtn" on:click={() => (visible = true)}
@@ -12,6 +17,30 @@
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
+        <form on:submit={submitForm}>
+            <div class="fullInput">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" />
+            </div>
+            <div class="fullInput">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" />
+            </div>
+            <div class="fullInput">
+                <label for="orgName">Name of Organization</label>
+                <input type="text" name="orgName" id="orgName" />
+            </div>
+            <div class="fullInput">
+                <label for="aboutOrg">About your organization</label>
+                <textarea name="aboutOrg" id="aboutOrg" />
+            </div>
+            <div class="fullInput">
+                <label for="projectNeeds">What do you need built and why?</label
+                >
+                <textarea name="projectNeeds" id="projectNeeds" />
+            </div>
+            <button id="submitBtn">Submit</button>
+        </form>
     </div>
 {/if}
 
@@ -26,7 +55,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: var(--primary-color);
+        background-color: var(--white);
         z-index: 2;
     }
     #applyForm #closeBtnContainer {

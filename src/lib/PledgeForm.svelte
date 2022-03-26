@@ -1,6 +1,11 @@
 <script>
     import { fade, fly } from "svelte/transition";
     let visible = false;
+
+    const submitForm = (event) => {
+        event.preventDefault();
+        console.log("submit form");
+    };
 </script>
 
 <button id="pledgeBtn" on:click={() => (visible = true)}
@@ -12,17 +17,52 @@
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
+        <form on:submit={submitForm}>
+            <div class="fullInput">
+                <label for="firstName">First Name</label>
+                <input type="text" name="firstName" id="firstName" />
+            </div>
+            <div class="fullInput">
+                <label for="lastName">Last Name</label>
+                <input type="text" name="lastName" id="lastName" />
+            </div>
+            <div class="fullInput">
+                <label for="donationAmount">Donation amount $ (USD)</label>
+                <input
+                    type="number"
+                    name="donationAmount"
+                    id="donationAmount"
+                />
+            </div>
+
+            <div class="fullInput">
+                <div class="checkboxContainer">
+                    <label for="oneTime">One time donation</label>
+                    <input type="checkbox" name="oneTime" id="oneTime" />
+                </div>
+                <div class="checkboxContainer">
+                    <label for="monthly">Monthly donation</label>
+                    <input type="checkbox" name="monthly" id="monthly" />
+                </div>
+            </div>
+
+            <button id="submitBtn">Submit</button>
+        </form>
     </div>
 {/if}
 
 <style>
     #pledgeForm {
         position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: var(--secondary-color);
+        background-color: var(--white);
         z-index: 2;
     }
     #pledgeForm #closeBtnContainer {
