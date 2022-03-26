@@ -3,8 +3,9 @@
     let visible = false;
 </script>
 
-<p>Apply to be a client</p>
-<button on:click={() => (visible = true)}>Show Apply Form</button>
+<button id="applyBtn" on:click={() => (visible = true)}
+    >Apply to be a client</button
+>
 
 {#if visible}
     <div id="applyForm" in:fly={{ y: 200, duration: 300 }} out:fade>

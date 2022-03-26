@@ -18,35 +18,66 @@
 	<title>About</title>
 </svelte:head>
 
-<div class="content">
+<div class="container">
 	<h1>About Mission Software</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make
-		your own by typing the following into your command line and following the
-		prompts:
+		Mission software provides free to low-cost web and mobile services to
+		nonprofits and qualifying businesses.
+	</p>
+	<p>
+		This includes custom websites, mobile apps, or in-house software
+		solutions.
 	</p>
 
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
+	<h2>How?</h2>
+	<p>Mission Software recieves financial support from donors.</p>
 	<p>
-		The page you're looking at is purely static HTML, with no client-side
-		interactivity needed. Because of that, we don't need to load any
-		JavaScript. Try viewing the page's source, or opening the devtools
-		network panel and reloading.
+		Mission Software may also monetize some applications when it makes sense
+		to do so.
 	</p>
 
+	<h2>Nonprofits</h2>
 	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading
-		and form handling. Try using it with JavaScript disabled!
+		There are two categories of nonprofit organizaitons that Mission
+		Software aims to support: Christian ministries and humanitarian
+		organizaitons.
+	</p>
+
+	<h3>Christian ministries</h3>
+	<p>
+		The primary goal of supporting Christian ministries to help spread the
+		true gospel of Jesus Christ.
+	</p>
+	<p>
+		This may include a local church, a foreign missionary, or any piece of
+		software that helps builds disciples of Jesus according to the Holy
+		Bible.
+	</p>
+	<h3>Humanitarian organizaitons</h3>
+	<p>
+		This refers to organizations that provide a better quality of life such
+		as prividing clean water or medical aid to a developing people group.
+	</p>
+	<h2>Qualifying businesses</h2>
+	<p>
+		A qualifying business could be a business in a low income area that
+		provides a service to the local community and lacks the funds to develop
+		quality software.
+	</p>
+	<p>
+		This could be mobile ordering for a local coffee shop in a rural town,
+		or business website for a plumber.
+	</p>
+	<h2>In House solutions</h2>
+	<p>
+		An in house solution would be a piece of software that Mission Software
+		creates without being commissioned by a client.
+	</p>
+	<h2>And more...</h2>
+	<p>Mission Software is not limited to the above categories.</p>
+	<p>
+		The overal goal is to provide free or low-cost software wherever the
+		world needs it.
 	</p>
 </div>
-
-<style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
-</style>

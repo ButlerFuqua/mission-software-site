@@ -1,41 +1,53 @@
 @import '@fontsource/fira-mono';
+@import '@fontsource/inter';
 
 :root {
-	font-family: 'Fira Mono', monospace;
+	font-family: 'Inter', sans-serif;
+	--font-heading: 'Inter', sans-serif;
+	--font-text: 'Inter', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
-	--background-color: #2E3440;
+	--dark-color: #2E3440;
 	--white: #ECEFF4;
 	--pure-white: #ffffff;
 	--primary-color: #81A1C1;
+	--primary-color-dark: #4172a3;
 	--secondary-color: #88C0D0;
+	--secondary-color-dark: #6ba2b1;
 	--tertiary-color: #b0e086;
 	--tertiary-color-dark: #8aaf69;
 	--accent-color: #CAA45B;
 	--heading-color: rgba(0, 0, 0, 0.7);
 	--grey-1: #D8DED3;
-	--text-color: #D8DED3;
+	--text-color-light: #D8DED3;
+	--text-color-dark: #333;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	--site-width: 900px;
 	--neat-red: #e66465;
 } 
+
+*{
+	box-sizing: border-box;
+}
 
 body {
 	min-height: 100vh;
 	margin: 0;
 	padding: 0;
-	background-color: var(--background-color);
-	background-image: linear-gradient(to top, var(--secondary-color) 0%, var(--background-color) 80%);
-	/* background: radial-gradient(ellipse at bottom, var(--secondary-color), var(--background-color)); */
-	color: var(--text-color);
+	background-color: var(--white);
+	color: var(--dark-color);
 }
 
+h1,h2,h3,h4,h5,h6{
+	font-family: var(--font-heading);
+}
+p,a button, li{
+	font-family: var(--font-text);
+}
 
-h1,
-h2,
 p {
-	font-weight: 400;
-	color: var(--text-color);
+	font-weight: 00;
 }
 
 p {
@@ -64,11 +76,15 @@ a:hover {
   }
 
 h1 {
-	font-size: 3rem;
+	font-size: 2rem;
 }
 
 h2 {
-	font-size: 3.5rem;
+	font-size: 1.8rem;
+}
+
+h3 {
+	font-size: 1.3rem;
 }
 
 pre {
@@ -85,7 +101,6 @@ pre {
 input,
 button {
 	font-size: inherit;
-	font-family: inherit;
 	cursor: pointer;
 	position: relative;
 }
@@ -109,6 +124,12 @@ button:focus:not(:focus-visible) {
 
 #tsparticles, #tsparticles canvas {
 	pointer-events: none !important;
+}
+
+.container{
+	padding: 1rem;
+	max-width: var(--site-width);
+	margin: auto;
 }
 
 @media (min-width: 720px) {
