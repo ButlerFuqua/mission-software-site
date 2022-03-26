@@ -139,7 +139,7 @@ button:focus:not(:focus-visible) {
 	margin: 1rem auto;
 }
 
-.fullInput input[type=text], .fullInput  input[type=number], .fullInput textarea{
+.fullInput input[type=text], .fullInput input[type=email], .fullInput  input[type=number], .fullInput textarea{
 	width: 100%;
 }
 input, textarea{
@@ -147,7 +147,7 @@ input, textarea{
 	border: 1px solid var(--grey-1);
 	color: var(--dark-color);
 }
-input[type=text], input[type=number]{
+input[type=text], input[type=number], input[type=email]{
 	border-radius: 1rem;
 }
 textarea{
