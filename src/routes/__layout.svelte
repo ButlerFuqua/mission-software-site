@@ -3,7 +3,6 @@
 	import DisclaimerDialog from "../lib/DisclaimerDialog.svelte";
 </script>
 
-<div id="wrapper">
 	<main>
 		<slot />
 	</main>
@@ -18,17 +17,13 @@
 			</p>
 		</div>
 	</footer>
-</div>
+
 
 <style>
-	#wrapper {
-		height: 100vh;
-	}
 	main {
 		padding: 0;
 		padding-bottom: 60px;
 		margin: 0 auto;
-		height: 100%;
 	}
 
 	footer {
