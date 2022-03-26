@@ -27,7 +27,7 @@
         width: 100vw;
         height: 100vh;
         background-color: var(--primary-color);
-        z-index: 1;
+        z-index: 2;
     }
     #applyForm #closeBtnContainer {
         position: absolute;

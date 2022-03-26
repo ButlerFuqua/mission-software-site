@@ -16,7 +16,7 @@
 <div class="banner">
 	<div class="container">
 		<section>
-			<img src="./logo.png" alt="SvelteKit" />
+			<img src="./logo.png" alt="mission software logo" />
 			<h1>Mission Software</h1>
 			<p>
 				Free to low-cost web and mobile apps for nonprofits and
