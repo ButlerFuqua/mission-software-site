@@ -19,9 +19,11 @@
 			<img src="./logo.png" alt="mission software logo" />
 			<h1>Mission Software</h1>
 			<p>
-				We build free or low-cost web and mobile apps for nonprofits and
-				qualifying businesses.
+				A mission to build free software for Christian ministries and other non-profits.
 			</p>
+<p class="red-text">
+Websites | Web apps | Mobile apps
+</p>
 			<AboutDialog />
 		</section>
 	</div>
