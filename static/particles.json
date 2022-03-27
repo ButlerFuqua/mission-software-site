@@ -9,8 +9,8 @@
         "shape": {
             "type": "circle",
             "stroke": {
-                "width": 0,
-                "color": "#ffffff"
+                "width": 3,
+                "color": "#333334"
             },
             "polygon": {
                 "nb_sides": 3
@@ -37,7 +37,7 @@
             }
         },
         "line_linked": {
-            "enable": true,
+            "enable": false,
             "distance": 300,
             "color": "#e66465",
             "opacity": 0.4,
@@ -45,8 +45,8 @@
         },
         "move": {
             "enable": true,
-            "speed": 1,
-            "direction": "none",
+            "speed": 3,
+            "direction": "top-right",
             "random": false,
             "straight": false,
             "out_mode": "out",
