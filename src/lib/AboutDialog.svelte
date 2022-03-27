@@ -10,6 +10,12 @@
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
+<p>
+Websites | Web apps | Mobile apps
+</p>
+
+
+
     </div>
 {/if}
 
