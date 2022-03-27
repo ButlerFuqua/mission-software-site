@@ -10,7 +10,7 @@
             "type": "triangle",
             "stroke": {
                 "width": 3,
-                "color": "#333334"
+                "color": "#81A1C1"
             },
             "polygon": {
                 "nb_sides": 3
