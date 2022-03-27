@@ -7,13 +7,13 @@
             "value": "#ffffff"
         },
         "shape": {
-            "type": "circle",
+            "type": "polygon",
             "stroke": {
                 "width": 3,
                 "color": "#333334"
             },
             "polygon": {
-                "nb_sides": 3
+                "nb_sides": 5
             }
         },
         "opacity": {
@@ -48,7 +48,7 @@
             "speed": 3,
             "direction": "top-right",
             "random": false,
-            "straight": false,
+            "straight": true,
             "out_mode": "out",
             "bounce": false,
             "attract": {
