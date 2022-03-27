@@ -7,7 +7,7 @@
             "value": "#ffffff"
         },
         "shape": {
-            "type": "polygon",
+            "type": "triangle",
             "stroke": {
                 "width": 3,
                 "color": "#333334"
