@@ -6,6 +6,7 @@
     let visible = false;
     let submittingForm = false;
     let showSuccessMessage = false;
+    let showErrorMessage = false;
     let errors = [];
     let orgName = "",
         firstName = "",
@@ -50,11 +51,17 @@
     const handleSuccess = () => {
         clearForm();
         showSuccessMessage = true;
-        console.log("handle success");
     };
 
     const handleError = (error) => {
+        showErrorMessage = true;
         console.error(error);
+    };
+
+    const clearMessages = () => {
+        submittingForm = false;
+        showSuccessMessage = false;
+        showErrorMessage = false;
     };
 
     const submitForm = async (event) => {
@@ -94,7 +101,7 @@
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
-        {#if !submittingForm && !showSuccessMessage}
+        {#if !submittingForm && !showSuccessMessage && !showErrorMessage}
             <form on:submit={submitForm}>
                 <div class="fullInput">
                     <label for="firstName">First Name</label>
@@ -158,8 +165,16 @@
                 </div>
                 <button id="submitBtn">Submit</button>
             </form>
-        {:else if !showSuccessMessage}
+        {:else if !showSuccessMessage && !showErrorMessage}
             <Spinner />
+        {:else if showErrorMessage}
+            <div class="pa-1">
+                <h2>Ooops... :(</h2>
+                <p>Looks like there was an error</p>
+                <p>
+                    <button on:click={clearMessages}>Try Again</button>
+                </p>
+            </div>
         {:else if showSuccessMessage}
             <div class="pa-1">
                 <h2>Applicaiton submitted!</h2>
