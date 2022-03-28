@@ -18,9 +18,7 @@
 		<section>
 			<img src="./logo.png" alt="mission software logo" />
 			<h1>Mission Software</h1>
-			<p>
-				A mission to build free software for Christian ministries and other qualifying organizations.
-			</p>
+			<p>A mission to build free software for Christian ministries.</p>
 
 			<AboutDialog />
 		</section>

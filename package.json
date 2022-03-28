@@ -6,19 +6,24 @@
     "build": "svelte-kit build",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
-    "prepare": "svelte-kit sync"
+    "prepare": "svelte-kit sync",
+    "vercel": "vercel dev"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
-    "svelte": "^3.46.0"
+    "svelte": "^3.46.0",
+    "vercel": "^24.0.1"
   },
   "type": "module",
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.0",
     "@fontsource/inter": "^4.5.7",
     "@lukeed/uuid": "^2.0.0",
+    "airtable": "^0.11.2",
+    "axios": "^0.26.1",
     "cookie": "^0.4.1",
+    "dotenv": "^16.0.0",
     "svelte-particles": "^1.42.4",
     "tsparticles": "^1.42.4"
   }

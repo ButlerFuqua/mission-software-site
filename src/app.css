@@ -42,7 +42,7 @@ body {
 h1,h2,h3,h4,h5,h6{
 	font-family: var(--font-heading);
 }
-p,a button, li{
+p,a button, li, input, textarea{
 	font-family: var(--font-text);
 }
 
@@ -175,6 +175,9 @@ form button {
 }
 .red-text {
 color: var(--neat-red);
+}
+.pa-1{
+	padding: 1rem;
 }
 @media (min-width: 720px) {
 	h1 {
