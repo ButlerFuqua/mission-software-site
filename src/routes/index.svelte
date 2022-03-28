@@ -8,6 +8,17 @@
 	import PledgeForm from "$lib/PledgeForm.svelte";
 	import AboutDialog from "$lib/AboutDialog.svelte";
 	import CurrentCount from "$lib/CurrentCount.svelte";
+
+	import axios from "axios";
+
+	const runExample = async () => {
+		try {
+			const response = await axios.get("/api/example");
+			console.log("reponse", response);
+		} catch (error) {
+			console.log("error", error);
+		}
+	};
 </script>
 
 <svelte:head>
@@ -35,6 +46,7 @@
 		<PledgeForm />
 	</div>
 </section>
+<button on:click={runExample}>Example</button>
 <Particles />
 
 <style>
