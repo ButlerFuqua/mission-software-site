@@ -54,7 +54,7 @@
     };
 
     const handleError = (error) => {
-        console.log("handle error");
+        console.error(error);
     };
 
     const submitForm = async (event) => {
