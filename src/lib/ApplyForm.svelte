@@ -5,7 +5,7 @@
 
     let visible = false;
     let submittingForm = false;
-    let showSuccessMessage = true;
+    let showSuccessMessage = false;
     let errors = [];
     let orgName = "",
         firstName = "",
