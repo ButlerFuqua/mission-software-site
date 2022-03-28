@@ -13,7 +13,7 @@
 
 	const runExample = async () => {
 		try {
-			const response = await axios.get("/api/example");
+			const response = await axios.post("/api/example");
 			console.log("reponse", response);
 		} catch (error) {
 			console.log("error", error);
