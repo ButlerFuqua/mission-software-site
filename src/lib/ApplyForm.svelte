@@ -74,7 +74,7 @@
         if (errors.length) return showFormErrors();
 
         try {
-            await axios.post(`http://localhost:3000/api/add-client`, {
+            await axios.post(`/api/add-client`, {
                 orgName,
                 firstName,
                 lastName,
