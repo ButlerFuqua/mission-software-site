@@ -3,26 +3,24 @@
 	import DisclaimerDialog from "../lib/DisclaimerDialog.svelte";
 </script>
 
-	<main>
-		<slot />
-	</main>
+<main>
+	<slot />
+</main>
 
-	<footer>
-		<div class="container">
-			<p>
-				<!-- <a href="/">Terms</a> -->
-				<!-- <a href="/">Consent</a> -->
-				<!-- <a href="/">Disclaimer</a> -->
-				<DisclaimerDialog />
-			</p>
-		</div>
-	</footer>
-
+<footer>
+	<div class="container">
+		<p>
+			<!-- <a href="/">Terms</a> -->
+			<!-- <a href="/">Consent</a> -->
+			<!-- <a href="/">Disclaimer</a> -->
+			<DisclaimerDialog />
+		</p>
+	</div>
+</footer>
 
 <style>
 	main {
 		padding: 0;
-		padding-bottom: 60px;
 		margin: 0 auto;
 	}
 
@@ -32,7 +30,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		height: 60;
 	}
 
 	footer a {
