@@ -175,6 +175,9 @@ form button {
 .red-text {
 color: var(--neat-red);
 }
+.primary-text {
+color: var(--primary-color);
+}
 .pa-1{
 	padding: 1rem;
 }

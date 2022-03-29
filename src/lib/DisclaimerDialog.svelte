@@ -14,22 +14,24 @@
             <h1>Disclaimer</h1>
             <p>By visiting this website, you consent to these terms.</p>
             <p>
+                This disclaimer may update at any time with or without notice.
+            </p>
+            <!-- <p>
                 Personal pronouns such as "we", "I", or "our" refer to Mission
                 Software.
             </p>
             <p>
                 "You" or "your" referes to anyone visiting this webiste and/or
                 you, the reader.
-            </p>
+            </p> -->
             <h2>Pledge to donate</h2>
             <p>
-                Currently, filling out the form to provide financial support has
-                not legal obligation. This form is only to give us an idea of
-                when Mission Software will have the financial suport to launch.
+                Filling out the form to provide financial support is only to
+                give us an idea of when we'll will have the funding to launch.
             </p>
             <p>
-                Please do not fill out this form unless you intend on fulfilling
-                your pledge to support us financially.
+                Please do not make a pledge unless you intend on fulfilling your
+                pledge to support us financially.
             </p>
             <p>
                 Your email is collected to notify you when Mission Software is
@@ -38,13 +40,12 @@
             <h3>Apply to be a client</h3>
             <p>
                 The main goal of Mission Software is provide, build, or
-                recommend software to Christian Ministries that spread the
-                Gospel and build discilples of Jesus Christ. However, other
+                recommend software to Christian Ministries. However, other
                 organizations may be considered.
             </p>
             <p>
-                It is the soal discretion of Mission Software on what projects
-                or organizations are accepted as a client.
+                It is at the sole discretion of Mission Software whether or not
+                an organization is accepted as a client.
             </p>
             <p>You will only be notified if your application is accepted.</p>
             <p>

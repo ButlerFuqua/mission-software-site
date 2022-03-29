@@ -64,7 +64,7 @@
 
 <div class="container">
     <p>
-        <span>Mission software will launch</span> once we reach our
+        <span>Mission Software will launch</span> once we reach our
         <span>goals</span>.
     </p>
     {#if !loadingGoals}
