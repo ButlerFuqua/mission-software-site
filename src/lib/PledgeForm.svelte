@@ -21,7 +21,10 @@
             errors.push(`Please enter at one time and/or monthly.`);
     };
 
-    const showFormErrors = () => {};
+    const showFormErrors = () => {
+        submittingForm = false;
+        alert(errors.join(","));
+    };
 
     const clearForm = () => {
         (amount = 0), (oneTime = false), (monthly = false);
@@ -94,6 +97,7 @@
                         type="email"
                         name="email"
                         id="email"
+                        required
                         bind:value={email}
                     />
                 </div>
@@ -106,6 +110,7 @@
                         id="donationAmount"
                         min="0.00"
                         step="1.00"
+                        required
                         bind:value={amount}
                     />
                 </div>
