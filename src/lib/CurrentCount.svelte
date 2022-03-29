@@ -30,12 +30,12 @@
         goals = [
             {
                 name: "Initial Funds",
-                raised: oneTimeAmount,
+                raised: oneTimeAmount || 0,
                 total: 1000,
             },
             {
                 name: "Monthly Funds",
-                raised: monthlyAmount,
+                raised: monthlyAmount || 0,
                 total: 1000,
             },
             {
