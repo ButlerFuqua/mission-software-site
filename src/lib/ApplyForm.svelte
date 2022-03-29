@@ -198,16 +198,13 @@
 <style>
     #applyForm {
         position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
         background-color: var(--white);
         z-index: 2;
+Overflow: auto;
     }
     #applyForm #closeBtnContainer {
         position: absolute;
