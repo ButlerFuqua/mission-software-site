@@ -1,6 +1,4 @@
 <script>
-    import axios from "axios";
-
     export let goal;
 
     let percentage = Math.floor((goal.raised / goal.total) * 100);
@@ -8,16 +6,6 @@
     const returnStyles = () => {
         return `width:${percentage}%`;
     };
-
-    // const getSubmissions = async () => {
-    //     try {
-    //         const response = axios.get("/api/list-submissions");
-    //         console.log("response", response);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-    // getSubmissions();
 </script>
 
 <div class="goal">
