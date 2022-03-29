@@ -85,12 +85,19 @@
 >
 
 {#if visible}
-    <div id="pledgeForm" in:fly={{ y: 200, duration: 300 }} out:fade>
+    <div
+        id="pledgeForm"
+        class={submittingForm || showSuccessMessage || showErrorMessage
+            ? "center-form"
+            : ""}
+        in:fly={{ y: 200, duration: 300 }}
+        out:fade
+    >
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
         {#if !submittingForm && !showSuccessMessage && !showErrorMessage}
-            <form on:submit={submitForm}>
+            <form on:submit={submitForm} class="mt-2">
                 <div class="fullInput">
                     <label for="email">Email</label>
                     <input
@@ -177,16 +184,14 @@
 <style>
     #pledgeForm {
         position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
         background-color: var(--white);
         z-index: 2;
+        overflow: auto;
     }
     #pledgeForm #closeBtnContainer {
         position: absolute;

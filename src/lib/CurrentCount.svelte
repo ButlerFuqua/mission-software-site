@@ -10,16 +10,30 @@
     let monthlyAmount;
     let oneTimeAmount;
 
+    const setAmounts = (monthly, oneTime) => {
+        if (monthly.length) {
+            monthlyAmount = monthly
+                .map((item) => item.Amount)
+                .reduce((a, b) => a + b);
+        } else {
+            monthlyAmount = 0;
+        }
+        if (oneTime.length) {
+            oneTimeAmount = oneTime
+                .map((item) => item.Amount)
+                .reduce((a, b) => a + b);
+        } else {
+            oneTimeAmount = 0;
+        }
+    };
+
     const getSubmissions = async () => {
         try {
             const response = await axios.get(`/api/list-submissions`);
-            monthlyAmount = response.data.pledges.monthly
-                .map((item) => item.Amount)
-                .reduce((a, b) => a + b);
-            oneTimeAmount = response.data.pledges.oneTime
-                .map((item) => item.Amount)
-                .reduce((a, b) => a + b);
-            console.log(monthlyAmount, oneTimeAmount);
+            setAmounts(
+                response.data.pledges.monthly,
+                response.data.pledges.oneTime
+            );
         } catch (error) {
             console.error(error);
         }

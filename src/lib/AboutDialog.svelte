@@ -10,28 +10,24 @@
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
-<p>
-Websites | Web apps | Mobile apps
-</p>
-
-
-
+        <br />
+        <br />
+        <div class="mt-2">
+            <p>Websites | Web apps | Mobile apps</p>
+        </div>
     </div>
 {/if}
 
 <style>
     #moreInfo {
         position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
         background-color: var(--white);
         z-index: 2;
+        overflow: auto;
     }
     #moreInfo #closeBtnContainer {
         position: absolute;

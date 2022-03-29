@@ -97,12 +97,19 @@
 >
 
 {#if visible}
-    <div id="applyForm" in:fly={{ y: 200, duration: 300 }} out:fade>
+    <div
+        id="applyForm"
+        class={submittingForm || showSuccessMessage || showErrorMessage
+            ? "center-form"
+            : ""}
+        in:fly={{ y: 200, duration: 300 }}
+        out:fade
+    >
         <div id="closeBtnContainer">
             <button on:click={() => (visible = false)}>Close</button>
         </div>
         {#if !submittingForm && !showSuccessMessage && !showErrorMessage}
-            <form on:submit={submitForm}>
+            <form on:submit={submitForm} class="mt-2">
                 <div class="fullInput">
                     <label for="firstName">First Name</label>
                     <input
@@ -204,7 +211,7 @@
         height: 100vh;
         background-color: var(--white);
         z-index: 2;
-Overflow: auto;
+        overflow: auto;
     }
     #applyForm #closeBtnContainer {
         position: absolute;

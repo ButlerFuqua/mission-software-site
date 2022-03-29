@@ -178,6 +178,15 @@ color: var(--neat-red);
 .pa-1{
 	padding: 1rem;
 }
+.mt-2{
+	margin-top: 2rem;
+}
+.center-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
