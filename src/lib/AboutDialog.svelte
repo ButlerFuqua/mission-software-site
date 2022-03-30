@@ -28,8 +28,7 @@
             </p>
             <p>
                 While not all projects will be 100% free, Mission Software aims
-                to never charge for labor. For example, we may build a web app
-                for free, but charge the cost of hosting.
+                to never charge for labor.
             </p>
             <h3>In House software</h3>
             <p>
