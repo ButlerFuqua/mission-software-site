@@ -30,7 +30,7 @@
                 While not all projects will be 100% free, Mission Software aims
                 to never charge for labor.
             </p>
-            <h3>In House software</h3>
+            <h3>In-House software</h3>
             <p>
                 Mission Software may also build projects of our own to <span
                     class="red-text">further the Gospel of Jesus Christ</span
