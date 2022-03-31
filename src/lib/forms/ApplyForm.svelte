@@ -1,34 +1,44 @@
 <script>
     import { fade, fly } from "svelte/transition";
     import axios from "axios";
-    import Spinner from "./Spinner.svelte";
+    import Spinner from "../loaders/Spinner.svelte";
 
     let visible = false;
     let submittingForm = false;
     let showSuccessMessage = false;
     let showErrorMessage = false;
     let errors = [];
-    let email = "",
-        amount = 0.0,
-        oneTime = false,
-        monthly = false;
+    let orgName = "",
+        firstName = "",
+        lastName = "",
+        email = "",
+        aboutOrg = "",
+        needs = "";
 
     const validateForm = () => {
+        if (!orgName || orgName.trim() === "")
+            errors.push(`Organization Name is a required field.`);
+        if (!firstName || firstName.trim() === "")
+            errors.push(`First Name is a required field.`);
+        if (!lastName || lastName.trim() === "")
+            errors.push(`Last Name is a required field.`);
         if (!email || email.trim() === "")
             errors.push(`Email is a required field.`);
-        if (amount < 1) errors.push(`Please enter an amount.`);
-        if (!oneTime && !monthly)
-            errors.push(`Please enter at one time and/or monthly.`);
+        if (!aboutOrg || aboutOrg.trim() === "")
+            errors.push(`About Organization is a required field.`);
+        if (!needs || needs.trim() === "")
+            errors.push(`Please explain what you need build at why.`);
     };
 
-    const showFormErrors = () => {
-        submittingForm = false;
-        alert(errors.join(","));
-    };
+    const showFormErrors = () => {};
 
     const clearForm = () => {
-        (amount = 0), (oneTime = false), (monthly = false);
+        orgName = "";
+        firstName = "";
+        lastName = "";
         email = "";
+        aboutOrg = "";
+        needs = "";
         submittingForm = false;
         showSuccessMessage = false;
     };
@@ -64,11 +74,13 @@
         if (errors.length) return showFormErrors();
 
         try {
-            await axios.post(`/api/add-pledge`, {
+            await axios.post(`/api/add-client`, {
+                orgName,
+                firstName,
+                lastName,
                 email,
-                amount,
-                oneTime,
-                monthly,
+                aboutOrg,
+                needs,
             });
             handleSuccess();
         } catch (error) {
@@ -80,13 +92,13 @@
     };
 </script>
 
-<button id="pledgeBtn" on:click={() => (visible = true)}
-    >Pledge to provide financial support</button
+<button id="applyBtn" on:click={() => (visible = true)}
+    >Apply to be a client</button
 >
 
 {#if visible}
     <div
-        id="pledgeForm"
+        id="applyForm"
         class={submittingForm || showSuccessMessage || showErrorMessage
             ? "center-form"
             : ""}
@@ -99,56 +111,65 @@
         {#if !submittingForm && !showSuccessMessage && !showErrorMessage}
             <form on:submit={submitForm} class="mt-2">
                 <div class="fullInput">
+                    <label for="firstName">First Name</label>
+                    <input
+                        required
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        bind:value={firstName}
+                    />
+                </div>
+                <div class="fullInput">
+                    <label for="lastName">Last Name</label>
+                    <input
+                        required
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        bind:value={lastName}
+                    />
+                </div>
+                <div class="fullInput">
                     <label for="email">Email</label>
                     <input
+                        required
                         type="email"
                         name="email"
                         id="email"
-                        required
                         bind:value={email}
                     />
                 </div>
-
                 <div class="fullInput">
-                    <label for="donationAmount">Donation amount $ (USD)</label>
+                    <label for="orgName">Name of Organization</label>
                     <input
-                        type="number"
-                        name="donationAmount"
-                        id="donationAmount"
-                        min="0.00"
-                        step="1.00"
                         required
-                        bind:value={amount}
+                        type="text"
+                        name="orgName"
+                        id="orgName"
+                        bind:value={orgName}
                     />
                 </div>
-
                 <div class="fullInput">
-                    <div class="checkboxContainer">
-                        <label for="oneTime">One time donation</label>
-                        <input
-                            type="checkbox"
-                            name="oneTime"
-                            id="oneTime"
-                            bind:checked={oneTime}
-                        />
-                    </div>
-                    <div class="checkboxContainer">
-                        <label for="monthly">Monthly donation</label>
-                        <input
-                            type="checkbox"
-                            name="monthly"
-                            id="monthly"
-                            bind:checked={monthly}
-                        />
-                    </div>
+                    <label for="aboutOrg">About your organization</label>
+                    <textarea
+                        required
+                        name="aboutOrg"
+                        id="aboutOrg"
+                        bind:value={aboutOrg}
+                    />
                 </div>
-
-                <p>
-                    <small>
-                        You will be emailed when we start accepting donations.
-                    </small>
-                </p>
-
+                <div class="fullInput">
+                    <label for="projectneeds"
+                        >What do you need built and why?</label
+                    >
+                    <textarea
+                        required
+                        name="projectneeds"
+                        id="projectneeds"
+                        bind:value={needs}
+                    />
+                </div>
                 <button id="submitBtn">Submit</button>
             </form>
         {:else if !showSuccessMessage && !showErrorMessage}
@@ -163,11 +184,11 @@
             </div>
         {:else if showSuccessMessage}
             <div class="pa-1">
-                <h2>Pledge submitted!</h2>
+                <h2>Applicaiton submitted!</h2>
                 <p>Thank you!</p>
                 <p>
-                    A message will be sent to the email you provided when
-                    Mission Software begins accepting donations.
+                    Your application was sent successfully. You will be
+                    contacted if we decide to move forward with your project.
                 </p>
                 <p>
                     You have contributed to helping Mission Software move the
@@ -182,9 +203,8 @@
 {/if}
 
 <style>
-    #pledgeForm {
+    #applyForm {
         position: fixed;
-
         top: 0;
         left: 0;
         width: 100vw;
@@ -193,17 +213,10 @@
         z-index: 2;
         overflow: auto;
     }
-    #pledgeForm #closeBtnContainer {
+    #applyForm #closeBtnContainer {
         position: absolute;
         top: 1rem;
         right: 1rem;
         height: auto;
-    }
-    button#pledgeBtn {
-        padding: 0;
-        background: none;
-        color: var(--primary-color);
-        box-shadow: none;
-        margin: 0;
     }
 </style>

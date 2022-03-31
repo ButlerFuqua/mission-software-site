@@ -1,7 +1,9 @@
 <script>
-	import "../app.css";
-	import DisclaimerDialog from "../lib/DisclaimerDialog.svelte";
+	import "../css/app.css";
+	import SiteNavigation from "../lib/layout/SiteNavigation.svelte";
 </script>
+
+<SiteNavigation />
 
 <main>
 	<slot />
@@ -10,10 +12,9 @@
 <footer>
 	<div class="container">
 		<p>
-			<!-- <a href="/">Terms</a> -->
-			<!-- <a href="/">Consent</a> -->
-			<!-- <a href="/">Disclaimer</a> -->
-			<DisclaimerDialog />
+			<a href="/">Terms</a>
+			<a href="/">Consent</a>
+			<a href="/">Disclaimer</a>
 		</p>
 	</div>
 </footer>
@@ -35,10 +36,4 @@
 	footer a {
 		font-weight: bold;
 	}
-
-	/* @media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	} */
 </style>

@@ -1,0 +1,27 @@
+.red-text {
+    color: var(--neat-red);
+    }
+    .primary-text {
+    color: var(--primary-color);
+    }
+    .secondary-text {
+    color: var(--secondary-color);
+    }
+    .tertiary-text {
+    color: var(--tertiary-color);
+    }
+    .pa-1{
+        padding: 1rem;
+    }
+    .mt-2{
+        margin-top: 2rem;
+    }
+    .mt-3{
+        margin-top: 3rem;
+    }
+    .center-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
