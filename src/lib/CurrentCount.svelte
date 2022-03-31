@@ -54,7 +54,7 @@
             },
             {
                 name: "Approved Clients",
-                raised: 0,
+                raised: 1,
                 total: 3,
             },
         ];

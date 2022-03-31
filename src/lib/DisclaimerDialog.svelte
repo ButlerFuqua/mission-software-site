@@ -49,8 +49,7 @@
             </p>
             <p>You will only be notified if your application is accepted.</p>
             <p>
-                Your email is collected to notify you of you application status,
-                and/or begin a discussion about your request.
+                Your email is collected to notify you of your application status and/or begin a discussion about your request.
             </p>
             <button on:click={() => (visible = false)}>Close</button>
         </div>
