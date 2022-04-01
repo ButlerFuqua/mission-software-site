@@ -9,6 +9,7 @@
     let navLinks = [
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
+        { path: "/services", label: "Services" },
     ];
 
     let pathname;
@@ -53,7 +54,7 @@
         bottom: inherit;
     }
     .menuButton {
-        position: absolute;
+        position: fixed;
         top: 0.5rem;
         right: 0.5rem;
         z-index: 4;

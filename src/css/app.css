@@ -73,8 +73,8 @@ a:hover {
 	text-decoration-color: var(--neat-red);
 }
 ::selection {
-	background: var(--background-color);
-	color: var(--primary-color);
+	background: var(--dark-color);
+	color: var(--tertiary-color);
   }
 
 h1 {
@@ -99,9 +99,6 @@ pre {
 	overflow-x: auto;
 	color: var(--text-color);
 }
-
-
-
 
 .container{
 	padding: 1rem;
