@@ -1,8 +1,21 @@
 <script>
     import { goto } from "$app/navigation";
+    import { onMount } from "svelte";
+
+    const resizeBanner = () => {
+        const banner = document.getElementById('banner')
+        const bannerContent = document.getElementById('bannerContent')
+        if(banner.offsetHeight < bannerContent.offsetHeight){
+            banner.style.height = `${bannerContent.offsetHeight}px`
+        }
+    }
+    onMount(() => {
+        resizeBanner()
+        window.addEventListener('resize', resizeBanner)
+    });
 </script>
 
-<div class="banner">
+<div id="banner" class="banner">
     <img
         id="bannerImage-mobile"
         src="./cloud-banner-mobile.png"
@@ -13,7 +26,7 @@
         src="./cloud-banner-desktop.png"
         alt="mission software banner desktop"
     />
-    <div class="content">
+    <div id="bannerContent" class="content">
         <h1>
             <span class="secondary-text">Mission</span>
             <span class="red-text">Software</span>
