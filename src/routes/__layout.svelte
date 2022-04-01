@@ -21,6 +21,7 @@
 
 <style>
 	main {
+		min-height: 90vh;
 		padding: 0;
 		margin: 0 auto;
 	}
@@ -31,6 +32,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		background-color: var(--dark-color);
+		min-height: 10vh;
 	}
 
 	footer a {

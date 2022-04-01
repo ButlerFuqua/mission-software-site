@@ -1,6 +1,6 @@
 <div class="banner">
     <div id="bannerImage" />
-    <div class="container">
+    <div class="content">
         <section>
             <!-- <img src="./logo.png" alt="mission software logo" /> -->
             <h1>
@@ -12,6 +12,8 @@
                 for
                 <span class="secondary-text">Christian</span> ministries.
             </p>
+            <button class="tertiary">Apply</button>
+            <button class="secondary">Support</button>
         </section>
     </div>
 </div>
@@ -26,10 +28,12 @@
         height: 50vh;
         position: relative;
         z-index: 1;
+        transition: all 0.2s;
     }
-    .container {
+    .content {
         position: absolute;
         z-index: 1;
+        padding: 1rem;
     }
     #bannerImage {
         height: 100%;
@@ -44,21 +48,43 @@
         font-size: 4rem;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 2000px) {
+        .banner {
+            height: 70vh !important;
+        }
+    }
+
+    @media (min-width: 1850px) {
+        .banner {
+            height: 60vh;
+        }
+        h1 {
+            font-size: 7rem !important;
+        }
+    }
+
+    @media (min-width: 800px) {
         #bannerImage {
             background: url("./cloud-banner-desktop.png");
             background-size: 70%;
             background-repeat: no-repeat;
             background-position: bottom right;
         }
+        h1 {
+            font-size: 6rem !important;
+        }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 800px) {
         #bannerImage {
             background: url("./cloud-banner-mobile.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: bottom;
+        }
+        .content {
+            /* text-align: center; */
+            width: 100%;
         }
     }
 </style>

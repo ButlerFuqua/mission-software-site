@@ -1,5 +1,7 @@
 <script>
-    import { fade, fly } from "svelte/transition";
+    import { onMount } from "svelte";
+
+    import { fly } from "svelte/transition";
 
     let showNav = false;
     const toggleNav = () => (showNav = !showNav);
@@ -8,6 +10,11 @@
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
     ];
+
+    let pathname;
+    onMount(() => {
+        pathname = window.location.pathname;
+    });
 </script>
 
 <button class="menuButton" on:click={toggleNav}>Menu</button>
@@ -24,6 +31,7 @@
                 {#each navLinks as link}
                     <li>
                         <a
+                            class={pathname === link.path ? "selected" : ""}
                             sveltekit:prefetch
                             href={link.path}
                             on:click={toggleNav}>{link.label}</a
@@ -59,5 +67,27 @@
         height: 100%;
         width: 100%;
         z-index: 3;
+    }
+    ul {
+        padding: 0;
+    }
+    li {
+        list-style: none;
+        padding: 0.5rem 0;
+    }
+    li a {
+        font-size: 3rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    a:hover {
+        text-decoration: none;
+        color: var(--neat-red);
+        text-decoration-color: var(--neat-red);
+    }
+    a.selected {
+        color: var(--neat-red);
+        text-decoration: underline;
+        text-decoration-color: var(--neat-red);
     }
 </style>

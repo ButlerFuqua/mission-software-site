@@ -11,8 +11,36 @@ button{
 	border: none;
 	border-radius: 1rem;
 	outline: none;
+	background-color: var(--primary-color);
+	box-shadow:  0px 2px 0px var(--primary-color-dark);
+	color: var(--pure-white);
+	transition: all .1s;
+}
+
+button.primary{
+	background-color: var(--primary-color);
+	box-shadow:  0px 2px 0px var(--primary-color-dark);
+	color: var(--pure-white);
+	transition: all .1s;
+}
+
+button.secondary{
+	background-color: var(--secondary-color);
+	box-shadow:  0px 2px 0px var(--secondary-color-dark);
+	color: var(--text-color-dark);
+	transition: all .1s;
+}
+
+button.tertiary{
 	background-color: var(--tertiary-color);
 	box-shadow:  0px 2px 0px var(--tertiary-color-dark);
+	color: var(--text-color-dark);
+	transition: all .1s;
+}
+
+button.red{
+	background-color: var(--red-color);
+	box-shadow:  0px 2px 0px var(--red-color-dark);
 	transition: all .1s;
 }
 
