@@ -1,6 +1,6 @@
 <script>
-    import { goto } from "$app/navigation";
-    const services = [
+    import { fly } from "svelte/transition";
+    $: services = [
         {
             name: "Web site",
             desc: "Build or redesign a website for your church or ministry.",
@@ -17,17 +17,12 @@
 </script>
 
 <div class="container">
-    <h2 class="text=center">Services</h2>
-    <div class="services">
-        {#each services as service}
-            <div class="serviceCard">
-                <h3>{service.name}</h3>
-                <p>{service.desc}</p>
-            </div>
-        {/each}
-    </div>
-    <br />
-    <button on:click={() => goto("/services")}>More</button>
+    {#each services as service}
+        <div class="serviceCard" in:fly={{ y: 100, duration: 200 }}>
+            <h3>{service.name}</h3>
+            <p>{service.desc}</p>
+        </div>
+    {/each}
 </div>
 
 <style>
@@ -36,18 +31,12 @@
         flex-direction: column;
         align-items: center;
     }
-    .services {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
     .serviceCard {
         padding: 0.5rem 1rem;
-        width: 18rem;
+        width: 100%;
         height: 10rem;
         max-width: 100%;
-        text-align: center;
+        text-align: left;
         background-color: var(--pure-white);
         border-radius: 0.5rem;
         margin: 1rem;

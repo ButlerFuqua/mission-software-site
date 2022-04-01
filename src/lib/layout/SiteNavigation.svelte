@@ -4,18 +4,26 @@
     import { fly } from "svelte/transition";
 
     let showNav = false;
-    const toggleNav = () => (showNav = !showNav);
 
     let navLinks = [
         { path: "/", label: "Home" },
         { path: "/about", label: "About" },
         { path: "/services", label: "Services" },
+        { path: "/support", label: "Support" },
     ];
 
-    let pathname;
+    $: pathname = null;
     onMount(() => {
-        pathname = window.location.pathname;
+        if (!pathname) pathname = window.location.pathname;
     });
+    const toggleNav = (event, path) => {
+        console.log("event", event);
+        console.log("path", path);
+        console.log("window.location.pathname", window.location.pathname);
+        path = window.location.pathname;
+        if (path) pathname = path;
+        showNav = !showNav;
+    };
 </script>
 
 <button class="menuButton" on:click={toggleNav}>Menu</button>
@@ -35,7 +43,8 @@
                             class={pathname === link.path ? "selected" : ""}
                             sveltekit:prefetch
                             href={link.path}
-                            on:click={toggleNav}>{link.label}</a
+                            on:click={(event) => toggleNav(event, link.path)}
+                            >{link.label}</a
                         >
                     </li>
                 {/each}
@@ -54,7 +63,7 @@
         bottom: inherit;
     }
     .menuButton {
-        position: fixed;
+        position: absolute;
         top: 0.5rem;
         right: 0.5rem;
         z-index: 4;

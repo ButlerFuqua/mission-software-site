@@ -1,3 +1,7 @@
+<script>
+    import { goto } from "$app/navigation";
+</script>
+
 <div class="banner">
     <div id="bannerImage" />
     <div class="content">
@@ -12,8 +16,12 @@
                 for
                 <span class="secondary-text">Christian</span> ministries.
             </p>
-            <button class="tertiary">Apply</button>
-            <button class="secondary">Support</button>
+            <button class="tertiary" on:click={() => goto("/apply")}
+                >Apply</button
+            >
+            <button class="secondary" on:click={() => goto("/support")}
+                >Support</button
+            >
         </section>
     </div>
 </div>
@@ -23,6 +31,7 @@
         max-width: 100px;
     }
     .banner {
+        display: flex;
         background-color: var(--dark-color);
         color: var(--white);
         height: 50vh;
