@@ -1,5 +1,5 @@
 <script>
-    import { goto } from "$app/navigation";
+    import CTA from "../widgets/CTA.svelte";
     import { topServices as services } from "../../data/services";
 </script>
 
@@ -14,12 +14,7 @@
         {/each}
     </div>
     <br />
-    <div class="flex">
-        <button class="tertiary" on:click={() => goto("/apply")}>Apply</button>
-        <button class="secondary" on:click={() => goto("/support")}
-            >Support</button
-        >
-    </div>
+    <CTA />
 </div>
 
 <style>

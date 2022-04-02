@@ -1,17 +1,17 @@
 <script>
-    import { goto } from "$app/navigation";
+    import CTA from "../widgets/CTA.svelte";
     import { onMount } from "svelte";
 
     const resizeBanner = () => {
-        const banner = document.getElementById('banner')
-        const bannerContent = document.getElementById('bannerContent')
-        if(banner.offsetHeight < bannerContent.offsetHeight){
-            banner.style.height = `${bannerContent.offsetHeight}px`
+        const banner = document.getElementById("banner");
+        const bannerContent = document.getElementById("bannerContent");
+        if (banner.offsetHeight < bannerContent.offsetHeight) {
+            banner.style.height = `${bannerContent.offsetHeight}px`;
         }
-    }
+    };
     onMount(() => {
-        resizeBanner()
-        window.addEventListener('resize', resizeBanner)
+        resizeBanner();
+        window.addEventListener("resize", resizeBanner);
     });
 </script>
 
@@ -35,10 +35,7 @@
             A mission to build <em class="red-text">free</em> software for
             <span class="secondary-text">Christian</span> ministries.
         </p>
-        <button class="tertiary" on:click={() => goto("/apply")}>Apply</button>
-        <button class="secondary" on:click={() => goto("/support")}
-            >Support</button
-        >
+        <CTA />
     </div>
 </div>
 

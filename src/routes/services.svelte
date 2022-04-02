@@ -1,7 +1,7 @@
 <script context="module">
 	export const prerender = true;
 	import { goto } from "$app/navigation";
-	import { createEventDispatcher } from "svelte";
+	import CTA from "../lib/widgets/CTA.svelte";
 </script>
 
 <script>
@@ -21,9 +21,9 @@
 		No worries. Please fee free to contact us anyway and we'll see what we
 		can do.
 	</p>
-	<button class="tertiary" on:click={() => goto("apply")}>Apply</button>
+	<CTA />>
 	<AllServices />
-	<button class="tertiary" on:click={() => goto("apply")}>Apply</button>
+	<CTA />>
 </div>
 
 <style>

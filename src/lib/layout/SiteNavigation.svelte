@@ -11,6 +11,8 @@
         { path: "/about", label: "About" },
         { path: "/services", label: "Services" },
         { path: "/support", label: "Support" },
+        { path: "/mentorship", label: "Mentorship" },
+        { path: "/resources", label: "Resources" },
     ];
 
     $: pathname = null;
@@ -18,9 +20,6 @@
         if (!pathname) pathname = window.location.pathname;
     });
     const toggleNav = (event, path) => {
-        console.log("event", event);
-        console.log("path", path);
-        console.log("window.location.pathname", window.location.pathname);
         path = window.location.pathname;
         if (path) pathname = path;
         showNav = !showNav;
