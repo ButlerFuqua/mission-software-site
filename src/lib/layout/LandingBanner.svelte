@@ -32,7 +32,7 @@
             <span class="red-text">Software</span>
         </h1>
         <p>
-            A mission to build <span class="red-text">free</span> software for
+            A mission to build <em class="red-text">free</em> software for
             <span class="secondary-text">Christian</span> ministries.
         </p>
         <button class="tertiary" on:click={() => goto("/apply")}>Apply</button>
@@ -51,6 +51,12 @@
     }
     img#bannerImage-desktop {
         width: 50%;
+    }
+    h1 {
+        margin-bottom: 0;
+    }
+    p {
+        margin-top: 0;
     }
     .banner {
         display: flex;

@@ -14,7 +14,7 @@
 		<p>
 			<a href="/">Terms</a>
 			<a href="/">Consent</a>
-			<a href="/">Disclaimer</a>
+			<a href="/disclaimer">Disclaimer</a>
 		</p>
 	</div>
 </footer>

@@ -22,8 +22,9 @@
 		can do.
 	</p>
 	<button class="tertiary" on:click={() => goto("apply")}>Apply</button>
+	<AllServices />
+	<button class="tertiary" on:click={() => goto("apply")}>Apply</button>
 </div>
-<AllServices />
 
 <style>
 </style>

@@ -1,9 +1,7 @@
 <script>
-    import { fade, fly } from "svelte/transition";
     import axios from "axios";
     import Spinner from "../loaders/Spinner.svelte";
 
-    let visible = false;
     let submittingForm = false;
     let showSuccessMessage = false;
     let showErrorMessage = false;
@@ -45,7 +43,6 @@
 
     const closeForm = () => {
         clearForm();
-        visible = false;
     };
 
     const handleSuccess = () => {
@@ -92,131 +89,106 @@
     };
 </script>
 
-<button id="applyBtn" on:click={() => (visible = true)}
-    >Apply to be a client</button
+<div
+    id="applyForm"
+    class={submittingForm || showSuccessMessage || showErrorMessage
+        ? "center-form"
+        : ""}
 >
-
-{#if visible}
-    <div
-        id="applyForm"
-        class={submittingForm || showSuccessMessage || showErrorMessage
-            ? "center-form"
-            : ""}
-        in:fly={{ y: 200, duration: 300 }}
-        out:fade
-    >
-        <div id="closeBtnContainer">
-            <button on:click={() => (visible = false)}>Close</button>
+    {#if !submittingForm && !showSuccessMessage && !showErrorMessage}
+        <form on:submit={submitForm}>
+            <div class="fullInput">
+                <label for="firstName">First Name</label>
+                <input
+                    required
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    bind:value={firstName}
+                />
+            </div>
+            <div class="fullInput">
+                <label for="lastName">Last Name</label>
+                <input
+                    required
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    bind:value={lastName}
+                />
+            </div>
+            <div class="fullInput">
+                <label for="email">Email</label>
+                <input
+                    required
+                    type="email"
+                    name="email"
+                    id="email"
+                    bind:value={email}
+                />
+            </div>
+            <div class="fullInput">
+                <label for="orgName">Name of Organization</label>
+                <input
+                    required
+                    type="text"
+                    name="orgName"
+                    id="orgName"
+                    bind:value={orgName}
+                />
+            </div>
+            <div class="fullInput">
+                <label for="aboutOrg">About your organization</label>
+                <textarea
+                    required
+                    name="aboutOrg"
+                    id="aboutOrg"
+                    bind:value={aboutOrg}
+                />
+            </div>
+            <div class="fullInput">
+                <label for="projectneeds">What do you need built and why?</label
+                >
+                <textarea
+                    required
+                    name="projectneeds"
+                    id="projectneeds"
+                    bind:value={needs}
+                />
+            </div>
+            <button class="tertiary" id="submitBtn">Submit</button>
+        </form>
+    {:else if !showSuccessMessage && !showErrorMessage}
+        <Spinner />
+    {:else if showErrorMessage}
+        <div class="pa-1">
+            <h2>Ooops... :(</h2>
+            <p>Looks like there was an error</p>
+            <p>
+                <button on:click={clearMessages}>Try Again</button>
+            </p>
         </div>
-        {#if !submittingForm && !showSuccessMessage && !showErrorMessage}
-            <form on:submit={submitForm} class="mt-2">
-                <div class="fullInput">
-                    <label for="firstName">First Name</label>
-                    <input
-                        required
-                        type="text"
-                        name="firstName"
-                        id="firstName"
-                        bind:value={firstName}
-                    />
-                </div>
-                <div class="fullInput">
-                    <label for="lastName">Last Name</label>
-                    <input
-                        required
-                        type="text"
-                        name="lastName"
-                        id="lastName"
-                        bind:value={lastName}
-                    />
-                </div>
-                <div class="fullInput">
-                    <label for="email">Email</label>
-                    <input
-                        required
-                        type="email"
-                        name="email"
-                        id="email"
-                        bind:value={email}
-                    />
-                </div>
-                <div class="fullInput">
-                    <label for="orgName">Name of Organization</label>
-                    <input
-                        required
-                        type="text"
-                        name="orgName"
-                        id="orgName"
-                        bind:value={orgName}
-                    />
-                </div>
-                <div class="fullInput">
-                    <label for="aboutOrg">About your organization</label>
-                    <textarea
-                        required
-                        name="aboutOrg"
-                        id="aboutOrg"
-                        bind:value={aboutOrg}
-                    />
-                </div>
-                <div class="fullInput">
-                    <label for="projectneeds"
-                        >What do you need built and why?</label
-                    >
-                    <textarea
-                        required
-                        name="projectneeds"
-                        id="projectneeds"
-                        bind:value={needs}
-                    />
-                </div>
-                <button id="submitBtn">Submit</button>
-            </form>
-        {:else if !showSuccessMessage && !showErrorMessage}
-            <Spinner />
-        {:else if showErrorMessage}
-            <div class="pa-1">
-                <h2>Ooops... :(</h2>
-                <p>Looks like there was an error</p>
-                <p>
-                    <button on:click={clearMessages}>Try Again</button>
-                </p>
-            </div>
-        {:else if showSuccessMessage}
-            <div class="pa-1">
-                <h2>Applicaiton submitted!</h2>
-                <p>Thank you!</p>
-                <p>
-                    Your application was sent successfully. You will be
-                    contacted if we decide to move forward with your project.
-                </p>
-                <p>
-                    You have contributed to helping Mission Software move the
-                    Gospel and build disciples of jesus.
-                </p>
-                <p>
-                    <button on:click={closeForm}>Close form</button>
-                </p>
-            </div>
-        {/if}
-    </div>
-{/if}
+    {:else if showSuccessMessage}
+        <div class="pa-1">
+            <h2>Applicaiton submitted!</h2>
+            <p>Thank you!</p>
+            <p>
+                Your application was sent successfully. You will be contacted if
+                we decide to move forward with your project.
+            </p>
+            <p>
+                You have contributed to helping Mission Software move the Gospel
+                and build disciples of jesus.
+            </p>
+            <p>
+                <button on:click={closeForm}>Close form</button>
+            </p>
+        </div>
+    {/if}
+</div>
 
 <style>
     #applyForm {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
         background-color: var(--white);
-        z-index: 2;
-        overflow: auto;
-    }
-    #applyForm #closeBtnContainer {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        height: auto;
     }
 </style>

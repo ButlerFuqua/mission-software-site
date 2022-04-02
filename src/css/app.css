@@ -3,6 +3,7 @@
 @import './button.css';
 @import './utils.css';
 @import './form.css';
+@import './content.css';
 
 :root {
 	font-family: 'Inter', sans-serif;

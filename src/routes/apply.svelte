@@ -4,6 +4,7 @@
 
 <script>
     import PageTitle from "../lib/layout/PageTitle.svelte";
+    import ApplyForm from "../lib/forms/ApplyForm.svelte";
 </script>
 
 <svelte:head>
@@ -11,6 +12,7 @@
 </svelte:head>
 
 <PageTitle title="Apply" />
+<ApplyForm />
 
 <style>
 </style>
