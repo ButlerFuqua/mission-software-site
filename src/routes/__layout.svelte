@@ -1,7 +1,9 @@
 <script>
-	import "../app.css";
-	import DisclaimerDialog from "../lib/DisclaimerDialog.svelte";
+	import "../css/app.css";
+	import SiteNavigation from "../lib/layout/SiteNavigation.svelte";
 </script>
+
+<SiteNavigation />
 
 <main>
 	<slot />
@@ -12,14 +14,16 @@
 		<p>
 			<!-- <a href="/">Terms</a> -->
 			<!-- <a href="/">Consent</a> -->
-			<!-- <a href="/">Disclaimer</a> -->
-			<DisclaimerDialog />
+			<!-- <a href="/disclaimer">Disclaimer</a> -->
 		</p>
+
+		<p>Mission Software</p>
 	</div>
 </footer>
 
 <style>
 	main {
+		min-height: 90vh;
 		padding: 0;
 		margin: 0 auto;
 	}
@@ -30,15 +34,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		background-color: var(--dark-color);
+		min-height: 10vh;
 	}
 
 	footer a {
 		font-weight: bold;
 	}
-
-	/* @media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	} */
+	footer p {
+		color: var(--primary-color)
+	}
 </style>

@@ -1,5 +1,9 @@
 @import '@fontsource/fira-mono';
 @import '@fontsource/inter';
+@import './button.css';
+@import './utils.css';
+@import './form.css';
+@import './content.css';
 
 :root {
 	font-family: 'Inter', sans-serif;
@@ -32,7 +36,6 @@
 }
 
 body {
-	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 	background-color: var(--white);
@@ -42,7 +45,7 @@ body {
 h1,h2,h3,h4,h5,h6{
 	font-family: var(--font-heading);
 }
-p,a button, li, input, textarea{
+p,a, li, input, textarea{
 	font-family: var(--font-text);
 	font-weight: 400;
 	font-size: 1rem;
@@ -71,8 +74,8 @@ a:hover {
 	text-decoration-color: var(--neat-red);
 }
 ::selection {
-	background: var(--background-color);
-	color: var(--primary-color);
+	background: var(--dark-color);
+	color: var(--tertiary-color);
   }
 
 h1 {
@@ -98,68 +101,13 @@ pre {
 	color: var(--text-color);
 }
 
-input,
-button {
-	font-size: inherit;
-	cursor: pointer;
-	position: relative;
-}
-
-button{
-	bottom: 2px;
-	padding: .5rem 1rem;
-	border: none;
-	border-radius: 1rem;
-	outline: none;
-	background-color: var(--tertiary-color);
-	box-shadow:  0px 2px 0px var(--tertiary-color-dark);
-	transition: all .1s;
-}
-
-button:focus:not(:focus-visible) {
-	bottom: 0px;
-	box-shadow: none;
-	outline: none;
-}
-
-#tsparticles, #tsparticles canvas {
-	pointer-events: none !important;
-}
-
 .container{
 	padding: 1rem;
 	max-width: var(--site-width);
 	margin: auto;
 }
 
-.fullInput{
-	width: 100%;
-	text-align: left;
-	margin: 1rem auto;
-}
 
-.fullInput input[type=text], .fullInput input[type=email], .fullInput  input[type=number], .fullInput textarea{
-	width: 100%;
-}
-input, textarea{
-	padding: .5rem;
-	border: 1px solid var(--grey-1);
-	color: var(--dark-color);
-}
-input[type=text], input[type=number], input[type=email]{
-	border-radius: 1rem;
-}
-textarea{
-	border-radius: 5px;
-}
-form {
-	padding: 1rem;
-}
-form button {
-	background-color: var(--secondary-color-dark);
-	box-shadow: 0px 2px 0px var(--primary-color-dark);
-	color: #fff;
-}
 .checkboxContainer{
 	display: flex;
 	flex-direction: row-reverse;
@@ -172,24 +120,7 @@ form button {
 .checkboxContainer input{
 	flex: 1;
 }
-.red-text {
-color: var(--neat-red);
-}
-.primary-text {
-color: var(--primary-color);
-}
-.pa-1{
-	padding: 1rem;
-}
-.mt-2{
-	margin-top: 2rem;
-}
-.center-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
+
 @media (min-width: 720px) {
 	h1 {
 		font-size: 2.4rem;
